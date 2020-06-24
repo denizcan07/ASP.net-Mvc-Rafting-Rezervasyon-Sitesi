@@ -1,0 +1,44 @@
+﻿@model kodfestdeneme.Models.vt.Lokanta
+@{
+    ViewBag.Title = "YemekGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Güncelleme Sayfası
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Yemek/Lokanta/">Lokanta Durumu</a>
+        </li>
+        <li class="breadcrumb-item active">Güncelleme</li>
+    </ol>
+    @using (Html.BeginForm("Güncelle", "Yemek", FormMethod.Post))
+    {
+
+
+<div class="form-group">
+
+
+    <label>Yeemek Numarası</label>
+    @Html.TextBoxFor(v => v.Yemekno, new { @class = "form-control" })
+    <label>Yemek Türü</label>
+    @Html.TextBoxFor(v => v.Yemektürü, new { @class = "form-control" })
+    <label>Ücret</label>
+    @Html.TextBoxFor(v => v.Ücret, new { @class = "form-control" })
+
+
+
+</div>
+        <div>
+            <button class="btn btn-warning"> Güncelle</button>
+        </div>
+    }<br />
+</div>
+
+
+

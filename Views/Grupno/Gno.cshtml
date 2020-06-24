@@ -1,0 +1,56 @@
+﻿@using kodfestdeneme.Models.vt
+@model List<Gruplar>
+@{
+    ViewBag.Title = "Gno";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Grup Durumu
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Grup Durumu</li>
+    </ol>
+
+
+
+
+    <table class="table">
+
+        <tr>
+            <th>Grup Numarası</th>
+            <th>Rafting Türü</th>
+            <th>Görevli No</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+
+        @for (int s = 0; s < Model.Count; s++)
+        {
+            <tr>
+                <th>@Model[s].Grupno</th>
+                <td>@Model[s].Raftingtür</td>
+                <td>@Model[s].Gno</td>
+
+                <td><a href="/Grupno/GrupGetir/@Model[s].Grupno" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Grupno/SIL/@Model[s].Grupno" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+
+    </table>
+    <a href="/Grupno/GEkle" class="btn btn-primary">Grup Ekle</a>
+
+</div>
+
+

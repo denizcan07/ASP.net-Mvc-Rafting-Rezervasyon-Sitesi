@@ -1,0 +1,54 @@
+﻿@using kodfestdeneme.Models.vt
+@model List<Lokanta>
+@{
+    ViewBag.Title = "Lokanta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Lokanta Durumu
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Lokanta Durumu</li>
+    </ol>
+
+
+
+
+    <table class="table">
+
+        <tr>
+            <th>Yemek Numarası</th>
+            <th>Yemek Türü</th>
+            <th>Ücret</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th>@Model[i].Yemekno</th>
+                <td>@Model[i].Yemektürü</td>
+                <td>@Model[i].Ücret</td>
+               
+                <td><a href="/Yemek/YemekGetir/@Model[i].Yemekno" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Yemek/SIL/@Model[i].Yemekno" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+
+    </table>
+    <a href="/Yemek/YemekEkle" class="btn btn-primary">Yemek Türü Ekle</a>
+
+</div>
+
+

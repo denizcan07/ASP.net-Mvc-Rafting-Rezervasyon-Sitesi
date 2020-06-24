@@ -1,0 +1,47 @@
+﻿@model kodfestdeneme.Models.vt.Görevli
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Güncelleme Sayfası
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Personel/Gorevli/">Görevli Durumu</a>
+        </li>
+        <li class="breadcrumb-item active">Güncelleme</li>
+    </ol>
+    @using (Html.BeginForm("Güncelle", "Personel", FormMethod.Post))
+    {
+
+
+<div class="form-group">
+
+
+
+    <label>Görevli Numarası</label>
+    @Html.TextBoxFor(v => v.Gno, new { @class = "form-control" })
+    <label>Görevli Adı</label>
+    @Html.TextBoxFor(v => v.Gad, new { @class = "form-control" })
+    <label>Görevli Soyad</label>
+    @Html.TextBoxFor(v => v.Gsoyad, new { @class = "form-control" })
+    <label>Görevli Cinsiyet</label>
+    @Html.TextBoxFor(v => v.Gcinsiyet, new { @class = "form-control" })
+    <label>Görevli Telefon</label>
+    @Html.TextBoxFor(v => v.Gtelefon, new { @class = "form-control" })
+    <label>Görevli E-Mail</label>
+    @Html.TextBoxFor(v => v.Gemail, new { @class = "form-control" })
+    <label>Görevli Maaşı</label>
+    @Html.TextBoxFor(v => v.Gmaaş, new { @class = "form-control" })
+   
+</div>
+        <div>
+            <button class="btn btn-warning"> Güncelle</button>
+        </div>
+    }<br />
+</div>
+
+

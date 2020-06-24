@@ -1,0 +1,59 @@
+﻿@using kodfestdeneme.Models.vt
+@model List<Görevli>
+@{
+    ViewBag.Title = "Gorevli";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Görevli Durumu
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Görevli Durumu</li>
+    </ol>
+
+
+
+
+    <table class="table">
+
+        <tr>
+            <th>Görevli Numarası</th>
+            <th>Görevli Adı</th>
+            <th>Görevli Soyadı</th>
+            <th>Görevli Cinsiyeti</th>
+            <th>Görevli Telefon</th>
+            <th>Görevli E-mail</th>
+            <th>Görevli Maaş</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr>
+                <th>@Model[i].Gno</th>
+                <td>@Model[i].Gad</td>
+                <td>@Model[i].Gsoyad</td>
+                <td>@Model[i].Gcinsiyet</td>
+                <td>@Model[i].Gtelefon</td>
+                <td>@Model[i].Gemail</td>
+                <td>@Model[i].Gmaaş</td>
+                <td><a href="/Personel/GorevliGetir/@Model[i].Gno" class="btn btn-success">Güncelle</a></td>
+                <td><a href="/Personel/SIL/@Model[i].Gno" class="btn btn-danger">Sil</a></td>
+            </tr>
+        }
+
+
+    </table>
+    <a href="/Personel/GorevliEkle" class="btn btn-primary">Görevli Ekle</a>
+
+</div>

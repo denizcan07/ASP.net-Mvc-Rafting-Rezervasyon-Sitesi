@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "YemekEkle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Yemek Kaydı Yap
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Home">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Yemek türü Ekle</li>
+    </ol>
+    <form class="form-group" method="post">
+
+        <div>
+            <label>Yemek Numarası:</label>
+            <input type="text" name="Yemekno" class="form-control" />
+
+            <label>Yemek Türü:</label>
+            <input type="text" name="Yemektürü" class="form-control" />
+
+            <label>Ücret:</label>
+            <input type="text" name="Ücret" class="form-control" />
+
+
+        </div>
+        <br />
+        <div><button>Yemek Kayıdı Yap</button></div>
+
+
+
+    </form>
+
+
+</div>
+

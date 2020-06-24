@@ -1,0 +1,43 @@
+﻿@model kodfestdeneme.Models.vt.Gruplar
+@{
+    ViewBag.Title = "GrupGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">
+        Güncelleme Sayfası
+
+    </h1>
+
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Grupno/Gno">Grup Durumu</a>
+        </li>
+        <li class="breadcrumb-item active">Güncelleme</li>
+    </ol>
+    @using (Html.BeginForm("Güncelle", "Grupno", FormMethod.Post))
+    {
+
+
+        <div class="form-group">
+
+
+            <label>Grup no</label>
+            @Html.TextBoxFor(m => m.Grupno, new { @class = "form-control" })
+            <label>Rafting Türü</label>
+            @Html.TextBoxFor(m => m.Raftingtür, new { @class = "form-control" })
+            <label>Görevli numarası</label>
+            @Html.TextBoxFor(m => m.Gno, new { @class = "form-control" })
+           
+
+
+        </div>
+        <div>
+            <button class="btn btn-warning"> Güncelle</button>
+        </div>
+    }<br />
+</div>
+
